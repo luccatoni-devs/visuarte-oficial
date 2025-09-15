@@ -116,7 +116,7 @@ const Pricing = () => {
 
                 <Button 
                   variant="success" 
-                  className="w-full mt-6 animate-pulse hover:animate-none"
+                  className="animate-scale-pulse hover:animate-none"
                   size="lg"
                   onClick={() => window.open(plan.paymentLink, '_blank')}
                 >

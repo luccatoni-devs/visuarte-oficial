@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Phone, Mail, Smartphone, Clock, MessageCircle, ArrowRight } from "lucide-react";
+import { Target, Phone, Mail, Smartphone, Clock, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -18,7 +18,7 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
+          {/* Contact Form (Left) */}
           <Card className="shadow-large border-0 bg-gradient-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-center">
@@ -53,24 +53,10 @@ const Contact = () => {
                   Solicitar Orçamento Gratuito
                 </Button>
               </form>
-              
-              <div className="text-center pt-4 border-t">
-                <p className="text-sm text-muted-foreground">
-                  Ou entre em contato diretamente pelo WhatsApp
-                </p>
-                 <Button 
-                   variant="service" 
-                   className="mt-2"
-                   onClick={() => window.open('https://wa.me/5532999940335?text=Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
-                 >
-                   <MessageCircle className="h-4 w-4 mr-2" />
-                   WhatsApp: (32) 99994-0335
-                 </Button>
-              </div>
             </CardContent>
           </Card>
 
-          {/* Info & Benefits */}
+          {/* Right Column: Info + Final CTA */}
           <div className="space-y-8">
             <Card className="border-0 bg-gradient-secondary text-white shadow-large">
               <CardContent className="p-6">
@@ -87,59 +73,27 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-gradient-card shadow-medium">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-foreground flex items-center">
-                  <Phone className="h-5 w-5 mr-2" />
-                  Atendimento Exclusivo
-                </h3>
-                 <div className="space-y-3 text-muted-foreground">
-                   <div className="flex items-center">
-                     <Mail className="h-4 w-4 mr-2" />
-                     visuarte.empresa@gmail.com
-                   </div>
-                   <div className="flex items-center">
-                     <Smartphone className="h-4 w-4 mr-2" />
-                     WhatsApp: (32) 99994-0335
-                   </div>
-                   <div className="flex items-center">
-                     <Clock className="h-4 w-4 mr-2" />
-                     Seg-Sex: 8h às 18h
-                   </div>
-                   <div className="flex items-center">
-                     <Clock className="h-4 w-4 mr-2" />
-                     Sáb: 8h às 12h
-                   </div>
-                 </div>
-              </CardContent>
-            </Card>
 
-            <div className="bg-accent/10 rounded-xl p-6 border-l-4 border-accent">
-              <h4 className="font-bold text-accent mb-2">Garantia de Satisfação</h4>
-              <p className="text-sm text-muted-foreground">
-                Se não ficar satisfeito com o resultado, refazemos ou devolvemos seu dinheiro. 
-                Sem burocracia, sem complicação.
+            {/* Moved Final CTA here */}
+            <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-white">
+              <h3 className="text-3xl font-bold mb-4">
+                Pronto para Vender Mais?
+              </h3>
+              <p className="text-lg mb-8 text-white/80 max-w-2xl">
+                Junte-se aos 500+ negócios que já aumentaram suas vendas com a Visuarte
               </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  variant="service" 
+                  className="sm:ml-2"
+                  onClick={() => window.open('https://wa.me/5532999940335?text=Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
+                >
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  WhatsApp: (32) 99994-0335
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* Final CTA */}
-        <div className="text-center mt-16 bg-gradient-hero rounded-3xl p-8 md:p-12 text-white">
-          <h3 className="text-3xl font-bold mb-4">
-            Pronto para Vender Mais?
-          </h3>
-          <p className="text-lg mb-8 text-white/80 max-w-2xl mx-auto">
-            Junte-se aos 500+ negócios que já aumentaram suas vendas com a Visuarte
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => window.open('https://wa.me/5532999940335?text=Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
-            >
-              Começar Agora - Orçamento Grátis
-            </Button>
           </div>
         </div>
       </div>

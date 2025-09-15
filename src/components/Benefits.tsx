@@ -1,5 +1,11 @@
 import { TrendingUp, Zap, DollarSign, Target, Shield, Award, Users, Percent, Clock, CheckCircle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import automotiveBeforeAfter from "../assets/automotive-before-after.jpg";
+import automotiveBeforeAfterNew from "../assets/automotive-before-after-new.jpg";
+import automotiveBeforeAfterFuturistic from "../assets/automotive-before-after-futuristic.jpg";
+import foodBeforeAfter from "../assets/food-before-after.jpg";
+import foodBeforeAfterNew from "../assets/food-before-after-new.jpg";
+import realEstateBeforeAfter from "../assets/real-estate-before-after.jpg";
 
 const Benefits = () => {
   const [counters, setCounters] = useState({
@@ -44,72 +50,98 @@ const Benefits = () => {
     }
   ];
 
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const hasStartedRef = useRef(false);
+
   useEffect(() => {
-    const duration = 2000; // 2 segundos para completar
-    const steps = 60; // 60 frames
-    const stepDuration = duration / steps;
+    if (!statsRef.current) return;
 
-    const intervals = stats.map(stat => {
-      let currentStep = 0;
-      
-      return setInterval(() => {
-        currentStep++;
-        const progress = currentStep / steps;
-        const easedProgress = 1 - Math.pow(1 - progress, 3); // easing out cubic
-        const currentValue = Math.floor(stat.target * easedProgress);
-        
-        setCounters(prev => ({
-          ...prev,
-          [stat.key]: currentValue
-        }));
+    const element = statsRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting && !hasStartedRef.current) {
+          hasStartedRef.current = true;
+          const duration = 2000; // 2 segundos para completar
+          const steps = 60; // 60 frames
+          const stepDuration = duration / steps;
 
-        if (currentStep >= steps) {
-          setCounters(prev => ({
-            ...prev,
-            [stat.key]: stat.target
-          }));
-          clearInterval(intervals[stats.indexOf(stat)]);
+          const intervals = stats.map((stat) => {
+            let currentStep = 0;
+            const intervalId = setInterval(() => {
+              currentStep++;
+              const progress = currentStep / steps;
+              const easedProgress = 1 - Math.pow(1 - progress, 3);
+              const currentValue = Math.floor(stat.target * easedProgress);
+
+              setCounters((prev) => ({
+                ...prev,
+                [stat.key]: currentValue,
+              }));
+
+              if (currentStep >= steps) {
+                setCounters((prev) => ({
+                  ...prev,
+                  [stat.key]: stat.target,
+                }));
+                clearInterval(intervalId);
+              }
+            }, stepDuration);
+            return intervalId;
+          });
+
+          // Cleanup intervals if unmounts mid-animation
+          const cleanup = () => intervals.forEach((id) => clearInterval(id));
+          element.addEventListener("visibilitychange", cleanup);
         }
-      }, stepDuration);
-    });
+      },
+      { root: null, rootMargin: "0px 0px -20% 0px", threshold: 0.2 }
+    );
 
-    return () => {
-      intervals.forEach(interval => clearInterval(interval));
-    };
-  }, []);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [stats]);
 
   const benefits = [
     {
       icon: TrendingUp,
       title: "Aumento de até 65% nas vendas",
-      description: "Imagens profissionais convertem mais visitantes em clientes, comprovado por nossos casos"
+      description: "Imagens profissionais convertem mais visitantes em clientes, comprovado por nossos casos",
+      image: foodBeforeAfter
     },
     {
       icon: Zap,
       title: "Entrega em 24-48h",
-      description: "Processo otimizado para você receber suas imagens transformadas rapidamente"
+      description: "Processo otimizado para você receber suas imagens transformadas rapidamente",
+      image: automotiveBeforeAfterNew
     },
     {
       icon: DollarSign,
       title: "ROI garantido",
-      description: "Investimento que se paga: mais vendas, maior percepção de valor, clientes satisfeitos"
+      description: "Investimento que se paga: mais vendas, maior percepção de valor, clientes satisfeitos",
+      image: automotiveBeforeAfter
     },
     {
       icon: Target,
       title: "Especialização por segmento",
-      description: "Conhecemos as particularidades de cada mercado: food, imóveis, automóveis"
+      description: "Conhecemos as particularidades de cada mercado: food, imóveis, automóveis",
+      image: realEstateBeforeAfter
     },
     {
       icon: Shield,
       title: "100% seguro e confidencial",
-      description: "Suas imagens são tratadas com total confidencialidade e segurança"
+      description: "Suas imagens são tratadas com total confidencialidade e segurança",
+      image: foodBeforeAfterNew
     },
     {
       icon: Award,
       title: "Qualidade premium",
-      description: "Padrão profissional de mercado, com técnicas avançadas de enhancement"
+      description: "Padrão profissional de mercado, com técnicas avançadas de enhancement",
+      image: automotiveBeforeAfterFuturistic
     }
   ];
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <section className="py-20 bg-background">
@@ -123,29 +155,63 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="group p-6 rounded-xl bg-gradient-card hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="h-12 w-12 text-primary mx-auto" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+          <nav className="md:col-span-1 bg-card rounded-xl p-2 border self-start">
+            <ul className="space-y-1">
+              {benefits.map((benefit, index) => {
+                const isActive = index === selectedIndex;
+                return (
+                  <li key={index}>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedIndex(index)}
+                      className={`w-full flex items-center gap-3 rounded-lg px-3 py-3 text-left transition-colors ${
+                        isActive
+                          ? "bg-primary/10 text-primary border border-primary/20"
+                          : "hover:bg-muted text-foreground"
+                      }`}
+                      aria-current={isActive ? "true" : undefined}
+                    >
+                      <benefit.icon className={`h-5 w-5 ${isActive ? "text-primary" : "text-muted-foreground"}`} />
+                      <span className="font-medium line-clamp-1">{benefit.title}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <div className="md:col-span-2 h-full">
+            {(() => {
+              const SelectedIcon = benefits[selectedIndex].icon;
+              return (
+                <div className="bg-gradient-card rounded-xl overflow-hidden border h-full flex flex-col">
+              <div className="w-full overflow-hidden bg-muted h-56 md:h-64">
+                <img
+                  src={benefits[selectedIndex].image}
+                  alt={benefits[selectedIndex].title}
+                  className="h-full w-full object-cover"
+                />
               </div>
-              
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {benefit.title}
-              </h3>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <SelectedIcon className="h-6 w-6 text-primary" />
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {benefits[selectedIndex].title}
+                  </h3>
+                </div>
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  {benefits[selectedIndex].description}
+                </p>
+              </div>
+                </div>
+              );
+            })()}
+          </div>
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 bg-gradient-primary rounded-3xl p-8 md:p-12 text-center text-white">
+        <div ref={statsRef} className="mt-20 bg-gradient-primary rounded-3xl p-8 md:p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-8">Nossos Números</h3>
           
           <div className="grid md:grid-cols-4 gap-8">

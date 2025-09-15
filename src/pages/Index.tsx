@@ -5,12 +5,16 @@ import Benefits from "@/components/Benefits";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
-      <Services />
+      <div id="services">
+        <Services />
+      </div>
       <Benefits />
       <Process />
       <Pricing />
@@ -18,6 +22,8 @@ const Index = () => {
       <div id="contact">
         <Contact />
       </div>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

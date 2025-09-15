@@ -1,4 +1,5 @@
-import { Upload, Search, Sparkles, Target, Zap, Shield, CheckCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Upload, Search, Sparkles, Target, Zap, Shield, CheckCircle, ChevronRight } from "lucide-react";
 
 const Process = () => {
   const steps = [
@@ -28,6 +29,16 @@ const Process = () => {
     }
   ];
 
+  const [activeStep, setActiveStep] = useState(0);
+  const [showAfter, setShowAfter] = useState(true);
+
+  useEffect(() => {
+    // Ao trocar de etapa, resetar a visualização para "depois"
+    setShowAfter(true);
+  }, [activeStep]);
+
+  const progressPercent = ((activeStep + 1) / steps.length) * 100;
+
   return (
     <section className="py-20 bg-gradient-primary relative overflow-hidden">
       {/* Background Pattern */}
@@ -46,59 +57,130 @@ const Process = () => {
           </p>
         </div>
 
+        {/* Barra de progresso */}
+        <div className="max-w-6xl mx-auto mb-10">
+          <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-white transition-all duration-500 ease-out"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+          <div className="flex justify-between text-white/70 text-sm mt-2">
+            {steps.map((s, i) => (
+              <span key={i} className={i === activeStep ? "text-white" : ""}>{s.number}</span>
+            ))}
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {steps.map((step, index) => (
-            <div 
-              key={index}
-              className="text-center group hover:scale-105 transition-transform duration-300"
-            >
-              <div className="mb-6">
+          {steps.map((step, index) => {
+            const isActive = index === activeStep;
+            return (
+              <button
+                key={index}
+                onClick={() => setActiveStep(index)}
+                className={`relative text-center group transition-all duration-300 rounded-2xl p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 ${
+                  isActive ? "bg-white/10 backdrop-blur-sm ring-1 ring-white/20" : "hover:scale-105"
+                }`}
+                aria-current={isActive}
+              >
                 <div className="mb-4">
-                  <step.icon className="h-16 w-16 text-secondary-light mx-auto" />
+                  <div className={`mb-4 mx-auto grid place-items-center rounded-xl w-20 h-20 transition-colors duration-300 ${
+                    isActive ? "bg-white/20" : "bg-white/10 group-hover:bg-white/15"
+                  }`}>
+                    <step.icon className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-white">
+                    {step.number}
+                  </div>
                 </div>
-                <div className="text-3xl font-bold text-secondary-light mb-2">
-                  {step.number}
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-3">
-                {step.title}
-              </h3>
-              
-              <p className="text-white/70 leading-relaxed">
-                {step.description}
-              </p>
-              
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <div className="w-8 h-0.5 bg-white/30" />
-                </div>
-              )}
-            </div>
-          ))}
+                <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
+                  {step.title}
+                  {isActive && <ChevronRight className="h-5 w-5 text-white animate-pulse" />}
+                </h3>
+                <p className="text-white/70 leading-relaxed max-w-xs mx-auto">
+                  {step.description}
+                </p>
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                    <div className={`w-8 h-0.5 transition-colors duration-300 ${isActive ? "bg-white" : "bg-white/30"}`} />
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Prazo de Entrega: 24-48h
-            </h3>
-            <p className="text-white/80 mb-6">
-              Receba suas imagens transformadas rapidamente, sem comprometer a qualidade
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <span className="text-white/70 flex items-center gap-1">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 max-w-5xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-stretch gap-6">
+              {/* Visual interativo de antes/depois simples para a etapa */}
+              <div className="flex-1">
+                <div className="relative rounded-xl overflow-hidden ring-1 ring-white/10">
+                  <div className={`absolute inset-0 transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`} style={{ background: "linear-gradient(135deg, rgba(0,0,0,.35), rgba(0,0,0,.15))" }} />
+                  <div className="aspect-[16/10] bg-[url('/placeholder.svg')] bg-center bg-cover" />
+                </div>
+                <div className="mt-3 flex items-center justify-center gap-3">
+                  <button
+                    onClick={() => setShowAfter(false)}
+                    className={`px-3 py-1.5 rounded-full text-sm transition-colors ${!showAfter ? "bg-white text-black" : "bg-white/10 text-white"}`}
+                  >
+                    Antes
+                  </button>
+                  <button
+                    onClick={() => setShowAfter(true)}
+                    className={`px-3 py-1.5 rounded-full text-sm transition-colors ${showAfter ? "bg-white text-black" : "bg-white/10 text-white"}`}
+                  >
+                    Depois
+                  </button>
+                </div>
+              </div>
+              {/* Conteúdo explicativo da etapa */}
+              <div className="flex-1 text-left">
+                <div className="inline-flex items-center gap-2 text-white/80 mb-2">
+                  <span className="text-sm font-semibold">Etapa {steps[activeStep].number}</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">{steps[activeStep].title}</h3>
+                <p className="text-white/80 leading-relaxed mb-4">
+                  {steps[activeStep].description}
+                </p>
+                <ul className="space-y-2 text-white/80">
+                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-white mt-1" /> Exemplo prático relacionado à etapa selecionada.</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-white mt-1" /> Dica rápida para obter o melhor resultado.</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-white mt-1" /> Tempo estimado e o que esperar do próximo passo.</li>
+                </ul>
+                <div className="mt-6 flex items-center gap-3">
+                  <button
+                    onClick={() => setActiveStep((s) => Math.max(0, s - 1))}
+                    disabled={activeStep === 0}
+                    className="px-4 py-2 rounded-lg bg-white/10 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                  >
+                    Voltar
+                  </button>
+                  <button
+                    onClick={() => setActiveStep((s) => Math.min(steps.length - 1, s + 1))}
+                    className="px-4 py-2 rounded-lg bg-white text-black hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+                  >
+                    Próximo passo <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Badges de confiança mantidos */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8">
+              <div className="text-white/80 flex items-center justify-center gap-2">
                 <Zap className="h-4 w-4" />
-                Entrega rápida
-              </span>
-              <span className="text-white/70 flex items-center gap-1">
+                Entrega rápida 24-48h
+              </div>
+              <div className="text-white/80 flex items-center justify-center gap-2">
                 <Shield className="h-4 w-4" />
                 100% seguro
-              </span>
-              <span className="text-white/70 flex items-center gap-1">
+              </div>
+              <div className="text-white/80 flex items-center justify-center gap-2">
                 <CheckCircle className="h-4 w-4" />
                 Garantia de qualidade
-              </span>
+              </div>
             </div>
           </div>
         </div>
