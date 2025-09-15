@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Rocket, Lightbulb, Star, Check } from "lucide-react";
 
 const Pricing = () => {
   const plans = [
@@ -32,7 +33,7 @@ const Pricing = () => {
         "Orientações de uso"
       ],
       popular: true,
-      badge: "⭐ Mais vendido",
+      badge: "Mais vendido",
       paymentLink: "https://pay.kirvano.com/db7bb35b-e536-4e92-acde-756ebf0fd6ba"
     },
     {
@@ -77,7 +78,8 @@ const Pricing = () => {
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-primary text-white text-center py-2 text-sm font-medium">
+                <div className="absolute top-0 left-0 right-0 bg-gradient-primary text-white text-center py-2 text-sm font-medium flex items-center justify-center">
+                  <Star className="h-4 w-4 mr-1" />
                   {plan.badge}
                 </div>
               )}
@@ -106,7 +108,7 @@ const Pricing = () => {
                 <ul className="space-y-3">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm">
-                      <span className="text-accent font-bold mt-0.5">✓</span>
+                      <Check className="h-4 w-4 text-accent font-bold mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
@@ -118,7 +120,8 @@ const Pricing = () => {
                   size="lg"
                   onClick={() => window.open(plan.paymentLink, '_blank')}
                 >
-                  🚀 Escolher {plan.name}
+                  <Rocket className="h-5 w-5 mr-2" />
+                  Escolher {plan.name}
                 </Button>
               </CardContent>
             </Card>
@@ -126,8 +129,9 @@ const Pricing = () => {
         </div>
 
         <div className="text-center mt-16 space-y-4">
-          <p className="text-muted-foreground">
-            💡 <strong>Dica:</strong> Todas as fotos devem ser enviadas para <strong>visuarte.empresa@gmail.com</strong>
+          <p className="text-muted-foreground flex items-center justify-center">
+            <Lightbulb className="h-4 w-4 mr-2" />
+            <strong>Dica:</strong> Todas as fotos devem ser enviadas para <strong>visuarte.empresa@gmail.com</strong>
           </p>
             <p className="text-sm text-muted-foreground">
               Dúvidas? Entre em contato: <span className="text-primary font-medium">(32) 99994-0335</span>

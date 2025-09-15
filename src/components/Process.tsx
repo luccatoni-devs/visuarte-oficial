@@ -1,28 +1,30 @@
+import { Upload, Search, Sparkles, Target, Zap, Shield, CheckCircle } from "lucide-react";
+
 const Process = () => {
   const steps = [
     {
       number: "01",
       title: "Envie suas Fotos",
       description: "Compartilhe suas imagens através do nosso sistema seguro ou WhatsApp.",
-      icon: "📤"
+      icon: Upload
     },
     {
       number: "02", 
       title: "Análise Profissional",
       description: "Nossa equipe analisa e planeja as melhorias necessárias para maximizar impacto.",
-      icon: "🔍"
+      icon: Search
     },
     {
       number: "03",
       title: "Tratamento Avançado", 
       description: "Aplicamos técnicas profissionais de edição e enhancement para transformar suas imagens.",
-      icon: "✨"
+      icon: Sparkles
     },
     {
       number: "04",
       title: "Entrega Premium",
       description: "Receba suas imagens transformadas em alta resolução, prontas para usar.",
-      icon: "🎯"
+      icon: Target
     }
   ];
 
@@ -51,7 +53,9 @@ const Process = () => {
               className="text-center group hover:scale-105 transition-transform duration-300"
             >
               <div className="mb-6">
-                <div className="text-6xl mb-4">{step.icon}</div>
+                <div className="mb-4">
+                  <step.icon className="h-16 w-16 text-secondary-light mx-auto" />
+                </div>
                 <div className="text-3xl font-bold text-secondary-light mb-2">
                   {step.number}
                 </div>
@@ -83,9 +87,18 @@ const Process = () => {
               Receba suas imagens transformadas rapidamente, sem comprometer a qualidade
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <span className="text-white/70">⚡ Entrega rápida</span>
-              <span className="text-white/70">🔒 100% seguro</span>
-              <span className="text-white/70">✅ Garantia de qualidade</span>
+              <span className="text-white/70 flex items-center gap-1">
+                <Zap className="h-4 w-4" />
+                Entrega rápida
+              </span>
+              <span className="text-white/70 flex items-center gap-1">
+                <Shield className="h-4 w-4" />
+                100% seguro
+              </span>
+              <span className="text-white/70 flex items-center gap-1">
+                <CheckCircle className="h-4 w-4" />
+                Garantia de qualidade
+              </span>
             </div>
           </div>
         </div>

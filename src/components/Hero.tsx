@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Rocket, Star, Smartphone, Home, Car, ChefHat } from "lucide-react";
 import foodImage from "@/assets/food-before-after.jpg";
 
 const Hero = () => {
@@ -36,10 +37,12 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
             <Button variant="futuristic" size="lg" className="min-w-[200px]">
-              🚀 Solicitar Orçamento
+              <Rocket className="h-5 w-5 mr-2" />
+              Solicitar Orçamento
             </Button>
             <Button variant="outline-hero" size="lg" className="min-w-[200px]">
-              ⭐ Ver Portfólio
+              <Star className="h-5 w-5 mr-2" />
+              Ver Portfólio
             </Button>
           </div>
 
@@ -47,10 +50,22 @@ const Hero = () => {
           <div className="mt-12 pt-8 border-t border-white/20">
             <p className="text-white/60 mb-4">Já transformamos mais de 500 negócios</p>
             <div className="flex justify-center items-center gap-8 text-sm text-white/50">
-              <span>📱 iFood</span>
-              <span>🏠 Imóveis</span>
-              <span>🚗 Automóveis</span>
-              <span>🍕 Restaurantes</span>
+              <span className="flex items-center gap-1">
+                <Smartphone className="h-4 w-4" />
+                iFood
+              </span>
+              <span className="flex items-center gap-1">
+                <Home className="h-4 w-4" />
+                Imóveis
+              </span>
+              <span className="flex items-center gap-1">
+                <Car className="h-4 w-4" />
+                Automóveis
+              </span>
+              <span className="flex items-center gap-1">
+                <ChefHat className="h-4 w-4" />
+                Restaurantes
+              </span>
             </div>
           </div>
         </div>

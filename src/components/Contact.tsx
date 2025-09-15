@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Target, Phone, Mail, Smartphone, Clock, MessageCircle, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -60,9 +61,10 @@ const Contact = () => {
                  <Button 
                    variant="service" 
                    className="mt-2"
-                   onClick={() => window.open('https://wa.me/5532999940335?text=👉%20Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
+                   onClick={() => window.open('https://wa.me/5532999940335?text=Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
                  >
-                   💬 WhatsApp: (32) 99994-0335
+                   <MessageCircle className="h-4 w-4 mr-2" />
+                   WhatsApp: (32) 99994-0335
                  </Button>
               </div>
             </CardContent>
@@ -72,7 +74,10 @@ const Contact = () => {
           <div className="space-y-8">
             <Card className="border-0 bg-gradient-secondary text-white shadow-large">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">🎯 Orçamento Personalizado</h3>
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <Target className="h-5 w-5 mr-2" />
+                  Orçamento Personalizado
+                </h3>
                 <ul className="space-y-2 text-white/90">
                   <li>• Análise gratuita das suas imagens</li>
                   <li>• Preço justo baseado na quantidade</li>
@@ -84,12 +89,27 @@ const Contact = () => {
 
             <Card className="border-0 bg-gradient-card shadow-medium">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-foreground">📞 Atendimento Exclusivo</h3>
+                <h3 className="text-xl font-bold mb-4 text-foreground flex items-center">
+                  <Phone className="h-5 w-5 mr-2" />
+                  Atendimento Exclusivo
+                </h3>
                  <div className="space-y-3 text-muted-foreground">
-                   <div>📧 visuarte.empresa@gmail.com</div>
-                   <div>📱 WhatsApp: (32) 99994-0335</div>
-                   <div>🕐 Seg-Sex: 8h às 18h</div>
-                   <div>🕐 Sáb: 8h às 12h</div>
+                   <div className="flex items-center">
+                     <Mail className="h-4 w-4 mr-2" />
+                     visuarte.empresa@gmail.com
+                   </div>
+                   <div className="flex items-center">
+                     <Smartphone className="h-4 w-4 mr-2" />
+                     WhatsApp: (32) 99994-0335
+                   </div>
+                   <div className="flex items-center">
+                     <Clock className="h-4 w-4 mr-2" />
+                     Seg-Sex: 8h às 18h
+                   </div>
+                   <div className="flex items-center">
+                     <Clock className="h-4 w-4 mr-2" />
+                     Sáb: 8h às 12h
+                   </div>
                  </div>
               </CardContent>
             </Card>
@@ -116,7 +136,7 @@ const Contact = () => {
             <Button 
               variant="hero" 
               size="lg"
-              onClick={() => window.open('https://wa.me/5532999940335?text=👉%20Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
+              onClick={() => window.open('https://wa.me/5532999940335?text=Olá,%20acabei%20de%20visitar%20o%20site%20da%20Visuarte%20e%20gostaria%20de%20solicitar%20um%20orçamento%20gratuito%20para%20melhoria%20de%20imagens.', '_blank')}
             >
               Começar Agora - Orçamento Grátis
             </Button>

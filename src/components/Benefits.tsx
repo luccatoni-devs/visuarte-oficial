@@ -1,32 +1,34 @@
+import { TrendingUp, Zap, DollarSign, Target, Shield, Award } from "lucide-react";
+
 const Benefits = () => {
   const benefits = [
     {
-      icon: "📈",
+      icon: TrendingUp,
       title: "Aumento de até 65% nas vendas",
       description: "Imagens profissionais convertem mais visitantes em clientes, comprovado por nossos casos"
     },
     {
-      icon: "⚡",
+      icon: Zap,
       title: "Entrega em 24-48h",
       description: "Processo otimizado para você receber suas imagens transformadas rapidamente"
     },
     {
-      icon: "💰",
+      icon: DollarSign,
       title: "ROI garantido",
       description: "Investimento que se paga: mais vendas, maior percepção de valor, clientes satisfeitos"
     },
     {
-      icon: "🎯",
+      icon: Target,
       title: "Especialização por segmento",
       description: "Conhecemos as particularidades de cada mercado: food, imóveis, automóveis"
     },
     {
-      icon: "🔒",
+      icon: Shield,
       title: "100% seguro e confidencial",
       description: "Suas imagens são tratadas com total confidencialidade e segurança"
     },
     {
-      icon: "🏆",
+      icon: Award,
       title: "Qualidade premium",
       description: "Padrão profissional de mercado, com técnicas avançadas de enhancement"
     }
@@ -50,8 +52,8 @@ const Benefits = () => {
               key={index}
               className="group p-6 rounded-xl bg-gradient-card hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {benefit.icon}
+              <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                <benefit.icon className="h-12 w-12 text-primary mx-auto" />
               </div>
               
               <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">

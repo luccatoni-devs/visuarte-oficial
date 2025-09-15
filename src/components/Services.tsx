@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { TrendingUp, Target, Camera, Home, DollarSign, Car, Zap, Gem, Rocket } from "lucide-react";
 import foodImage from "@/assets/food-before-after-complete.jpg";
 import realEstateImage from "@/assets/real-estate-before-after-new.jpg";
 import automotiveImage from "@/assets/automotive-before-after-complete.jpg";
@@ -10,21 +11,33 @@ const Services = () => {
       title: "Restaurantes & iFood",
       description: "Transformamos suas fotos de pratos em imagens irresistíveis que aumentam pedidos e conversões no delivery.",
       image: foodImage,
-      benefits: ["↗ 65% mais pedidos", "🎯 Destaque no app", "📸 Fotos profissionais"],
+      benefits: [
+        { icon: TrendingUp, text: "65% mais pedidos" },
+        { icon: Target, text: "Destaque no app" },
+        { icon: Camera, text: "Fotos profissionais" }
+      ],
       category: "food"
     },
     {
       title: "Imóveis",
       description: "Valorizamos seus imóveis com fotos que destacam o potencial e aceleram vendas e locações.",
       image: realEstateImage,
-      benefits: ["🏠 Venda mais rápida", "💰 Maior valor percebido", "📈 Mais visitas"],
+      benefits: [
+        { icon: Home, text: "Venda mais rápida" },
+        { icon: DollarSign, text: "Maior valor percebido" },
+        { icon: TrendingUp, text: "Mais visitas" }
+      ],
       category: "realestate"
     },
     {
       title: "Automóveis",
       description: "Suas fotos de veículos ganham qualidade showroom, atraindo mais compradores interessados.",
       image: automotiveImage,
-      benefits: ["🚗 Aparência premium", "⚡ Venda acelerada", "💎 Maior valorização"],
+      benefits: [
+        { icon: Car, text: "Aparência premium" },
+        { icon: Zap, text: "Venda acelerada" },
+        { icon: Gem, text: "Maior valorização" }
+      ],
       category: "automotive"
     }
   ];
@@ -67,7 +80,8 @@ const Services = () => {
                 <div className="space-y-2">
                   {service.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-center text-sm text-accent font-medium">
-                      {benefit}
+                      <benefit.icon className="h-4 w-4 mr-2" />
+                      {benefit.text}
                     </div>
                   ))}
                 </div>
@@ -77,7 +91,8 @@ const Services = () => {
                   className="w-full mt-4"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  🚀 Solicitar Orçamento
+                  <Rocket className="h-5 w-5 mr-2" />
+                  Solicitar Orçamento
                 </Button>
               </CardContent>
             </Card>
