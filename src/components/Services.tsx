@@ -11,6 +11,8 @@ import automotiveImage from "@/assets/automotive-before-after-complete.jpg";
 const Services = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [api, setApi] = useState<any>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
 
   const services = [
     {
@@ -132,11 +134,30 @@ const Services = () => {
 
     const onSelect = () => {
       setCurrentSlide(api.selectedScrollSnap());
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
     };
 
     api.on("select", onSelect);
-    return () => api.off("select", onSelect);
+    api.on("reInit", onSelect);
+    onSelect();
+
+    return () => {
+      api.off("select", onSelect);
+      api.off("reInit", onSelect);
+    };
   }, [api]);
+
+  // Calculate number of pages based on visible slides
+  const getVisibleSlides = () => {
+    if (!api) return 1;
+    return Math.ceil(services.length / api.slidesInView().length);
+  };
+
+  const getTotalPages = () => {
+    if (!api) return Math.ceil(services.length / 3); // Default assumption
+    return api.scrollSnapList().length;
+  };
 
   const scrollTo = (index: number) => {
     api?.scrollTo(index);
@@ -298,12 +319,13 @@ const Services = () => {
               size="icon"
               className="rounded-full"
               onClick={scrollPrev}
+              disabled={!canScrollPrev}
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
             
             <div className="flex gap-2">
-              {services.map((_, index) => (
+              {Array.from({ length: getTotalPages() }).map((_, index) => (
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
@@ -319,6 +341,7 @@ const Services = () => {
               size="icon"
               className="rounded-full"
               onClick={scrollNext}
+              disabled={!canScrollNext}
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
