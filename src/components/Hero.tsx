@@ -40,16 +40,12 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Logo/Brand */}
-          <div className="mb-8 flex flex-col items-center">
+          <div className="mb-2 flex flex-col items-center">
             <img 
               src="/lovable-uploads/logo.png" 
               alt="Visuarte Logo"
-              className="h-30 w-auto mb-6 drop-shadow-2xl filter brightness-0 invert hover:scale-110 transition-all duration-300"
+              className="h-30 w-auto mb-2 drop-shadow-2xl filter brightness-0 invert hover:scale-110 transition-all duration-300"
             />
-            <p className="text-xl md:text-2xl font-light tracking-wide opacity-90">
-              Visuarte: imagens que vendem por você
-            </p>
-            <div className="mt-3 mx-auto h-1.5 w-96 rounded-full hero-slogan-stripe" />
           </div>
 
           {/* Main Headline */}

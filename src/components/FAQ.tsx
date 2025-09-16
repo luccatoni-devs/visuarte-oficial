@@ -64,12 +64,6 @@ const FAQ = () => {
           </Accordion>
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground">
-            Ainda tem dúvidas? Entre em contato: 
-            <span className="text-primary font-medium ml-1">(32) 99994-0335</span>
-          </p>
-        </div>
       </div>
     </section>
   );

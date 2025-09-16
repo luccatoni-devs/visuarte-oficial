@@ -68,16 +68,14 @@ const Footer = () => {
               <div className="flex items-center justify-center gap-3 text-blue-100">
                 <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="h-5 w-5" /></a>
                 <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
-                <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
               </div>
             </div>
 
             <div>
               <h4 className="font-semibold mb-3">Atendimento</h4>
               <ul className="space-y-2 text-sm text-blue-100">
-                <li className="flex items-center justify-center align-middle">Seg a Sex: 9h às 18h</li>
-                <li className="flex items-center justify-center align-middle">Sábado: 9h às 12h</li>
-                <li className="flex items-center justify-center align-middle">Resposta média: 1–2h úteis</li>
+                <li className="flex items-center justify-center align-middle">Seg a Sex: 8h às 18h</li>
+                <li className="flex items-center justify-center align-middle">Sábado: 8h às 12h</li>
               </ul>
             </div>
           </div>

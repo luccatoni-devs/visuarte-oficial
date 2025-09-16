@@ -347,12 +347,6 @@ const Services = () => {
             </Button>
           </div>
         </div>
-
-        <div className="text-center mt-12">
-          <Button variant="primary" size="lg">
-            Ver Todos os Serviços
-          </Button>
-        </div>
       </div>
     </section>
   );

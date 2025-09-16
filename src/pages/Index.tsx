@@ -4,7 +4,7 @@ import Process from "@/components/Process";
 import Benefits from "@/components/Benefits";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
+import Satisfaction from "@/components/Satisfaction";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 
@@ -19,8 +19,8 @@ const Index = () => {
       <Process />
       <Pricing />
       <FAQ />
-      <div id="contact">
-        <Contact />
+      <div id="Satisfaction">
+        <Satisfaction />
       </div>
       <Footer />
       <WhatsAppFloat />
