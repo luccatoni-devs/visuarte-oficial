@@ -107,14 +107,16 @@ export default {
         },
         "scale-pulse": {
           "0%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.06)" },
+          "20%": { transform: "scale(1.03)" },
+          "50%": { transform: "scale(1.08)" },
+          "80%": { transform: "scale(1.03)" },
           "100%": { transform: "scale(1)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "scale-pulse": "scale-pulse 3s ease-in-out infinite",
+        "scale-pulse": "scale-pulse 12s cubic-bezier(0.4, 0, 0.2, 1) infinite",
       },
     },
   },
