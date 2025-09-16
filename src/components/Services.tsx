@@ -227,47 +227,53 @@ const Services = () => {
                       </Card>
                     </DialogTrigger>
                     
-                    <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="text-2xl font-bold text-foreground">
+                    <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto flex flex-col items-center justify-center">
+                      <DialogHeader className="w-full flex flex-col items-center">
+                        {/* Service Image */}
+                        <img
+                          src={service.image}
+                          alt={`${service.title} - Antes e Depois`}
+                          className="w-full max-w-md h-56 object-cover rounded-lg mb-6 shadow-lg"
+                        />
+                        <DialogTitle className="text-2xl font-bold text-foreground text-center w-full">
                           {service.title}
                         </DialogTitle>
-                        <DialogDescription className="text-muted-foreground">
+                        <DialogDescription className="text-muted-foreground text-center w-full">
                           {service.detailedInfo.fullDescription}
                         </DialogDescription>
                       </DialogHeader>
                       
-                      <div className="space-y-6 mt-6">
+                      <div className="space-y-6 mt-6 w-full flex flex-col items-center">
                         {/* Pricing and Time */}
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div className="space-y-2">
+                        <div className="grid md:grid-cols-2 gap-4 w-full justify-center">
+                          <div className="space-y-2 flex flex-col items-center">
                             <div className="flex items-center text-primary font-semibold">
                               <DollarSign className="h-5 w-5 mr-2" />
                               Preço
                             </div>
-                            <p className="text-2xl font-bold text-foreground">
+                            <p className="text-2xl font-bold text-foreground text-center">
                               {service.detailedInfo.pricing}
                             </p>
                           </div>
                           
-                          <div className="space-y-2">
+                          <div className="space-y-2 flex flex-col items-center">
                             <div className="flex items-center text-primary font-semibold">
                               <Clock className="h-5 w-5 mr-2" />
                               Prazo de Entrega
                             </div>
-                            <p className="text-lg font-medium text-foreground">
+                            <p className="text-lg font-medium text-foreground text-center">
                               {service.detailedInfo.deliveryTime}
                             </p>
                           </div>
                         </div>
                         
                         {/* Process */}
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-foreground flex items-center">
+                        <div className="space-y-3 w-full flex flex-col items-center">
+                          <h4 className="text-lg font-semibold text-foreground flex items-center justify-center">
                             <Target className="h-5 w-5 mr-2 text-primary" />
                             Nosso Processo
                           </h4>
-                          <div className="space-y-2">
+                          <div className="space-y-2 w-full flex flex-col items-center">
                             {service.detailedInfo.process.map((step, idx) => (
                               <div key={idx} className="flex items-center text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
@@ -278,12 +284,12 @@ const Services = () => {
                         </div>
                         
                         {/* Includes */}
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-foreground flex items-center">
+                        <div className="space-y-3 w-full flex flex-col items-center">
+                          <h4 className="text-lg font-semibold text-foreground flex items-center justify-center">
                             <Star className="h-5 w-5 mr-2 text-primary" />
                             O que está incluído
                           </h4>
-                          <div className="space-y-2">
+                          <div className="space-y-2 w-full flex flex-col items-center">
                             {service.detailedInfo.includes.map((item, idx) => (
                               <div key={idx} className="flex items-center text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
@@ -294,10 +300,10 @@ const Services = () => {
                         </div>
                         
                         {/* CTA Button */}
-                        <div className="pt-4 border-t">
+                        <div className="pt-4 border-t w-full flex justify-center">
                           <Button 
                             variant="futuristic" 
-                            className="w-full"
+                            className="w-full max-w-xs"
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                           >
                             <Rocket className="h-5 w-5 mr-2" />

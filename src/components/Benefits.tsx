@@ -1,11 +1,11 @@
 import { TrendingUp, Zap, DollarSign, Target, Shield, Award, Users, Percent, Clock, CheckCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import automotiveBeforeAfter from "../assets/automotive-before-after.jpg";
-import automotiveBeforeAfterNew from "../assets/automotive-before-after-new.jpg";
-import automotiveBeforeAfterFuturistic from "../assets/automotive-before-after-futuristic.jpg";
-import foodBeforeAfter from "../assets/food-before-after.jpg";
-import foodBeforeAfterNew from "../assets/food-before-after-new.jpg";
-import realEstateBeforeAfter from "../assets/real-estate-before-after.jpg";
+import aumento from "../assets/benefits-imgs/aumento.jpg";
+import entrega from "../assets/benefits-imgs/entrega.jpg";
+import especializacao from "../assets/benefits-imgs/especialização.jpg";
+import garantia from "../assets/benefits-imgs/garantia.jpg";
+import roigarantido from "../assets/benefits-imgs/roigarantido.jpg";
+import seguranca from "../assets/benefits-imgs/seguranca.jpg";
 
 const Benefits = () => {
   const [counters, setCounters] = useState({
@@ -107,37 +107,37 @@ const Benefits = () => {
       icon: TrendingUp,
       title: "Aumento de até 65% nas vendas",
       description: "Imagens profissionais convertem mais visitantes em clientes, comprovado por nossos casos",
-      image: foodBeforeAfter
+      image: aumento
     },
     {
       icon: Zap,
       title: "Entrega em 24-48h",
       description: "Processo otimizado para você receber suas imagens transformadas rapidamente",
-      image: automotiveBeforeAfterNew
+      image: entrega
     },
     {
       icon: DollarSign,
       title: "ROI garantido",
       description: "Investimento que se paga: mais vendas, maior percepção de valor, clientes satisfeitos",
-      image: automotiveBeforeAfter
+      image: roigarantido
     },
     {
       icon: Target,
       title: "Especialização por segmento",
       description: "Conhecemos as particularidades de cada mercado: food, imóveis, automóveis",
-      image: realEstateBeforeAfter
+      image: especializacao
     },
     {
       icon: Shield,
       title: "100% seguro e confidencial",
       description: "Suas imagens são tratadas com total confidencialidade e segurança",
-      image: foodBeforeAfterNew
+      image: seguranca
     },
     {
       icon: Award,
       title: "Qualidade premium",
       description: "Padrão profissional de mercado, com técnicas avançadas de enhancement",
-      image: automotiveBeforeAfterFuturistic
+      image: garantia
     }
   ];
 
