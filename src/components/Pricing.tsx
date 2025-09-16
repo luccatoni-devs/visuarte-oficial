@@ -128,15 +128,6 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16 space-y-4">
-          <p className="text-muted-foreground flex items-center justify-center">
-            <Lightbulb className="h-4 w-4 mr-2" />
-            <strong>Dica:</strong> Todas as fotos devem ser enviadas para <strong>visuarte.empresa@gmail.com</strong>
-          </p>
-            <p className="text-sm text-muted-foreground">
-              Dúvidas? Entre em contato: <span className="text-primary font-medium">(32) 99994-0335</span>
-            </p>
-        </div>
       </div>
     </section>
   );
