@@ -48,7 +48,7 @@ const Services = () => {
     {
       title: "Live Photo",
       description: "Transformamos suas fotos estáticas em imagens dinâmicas e interativas que capturam a atenção.",
-      image: foodImage, // Temporary - will need a specific image
+      image: foodImage,
       benefits: [
         { icon: Play, text: "Movimento dinâmico" },
         { icon: Sparkles, text: "Efeito cinematográfico" },
