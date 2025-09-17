@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Phone, Clock, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 const Satisfaction = () => {
+  const [spotlight, setSpotlight] = useState<{ x: number; y: number; active: boolean }>({
+    x: 0,
+    y: 0,
+    active: false,
+  });
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -56,8 +62,29 @@ const Satisfaction = () => {
           </Card>
         </div>
 
-        <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-white max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div 
+          className="relative bg-gradient-hero rounded-3xl p-8 md:p-12 text-white max-w-6xl mx-auto overflow-hidden"
+          onMouseMove={(e) => {
+            const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+            setSpotlight({
+              x: e.clientX - rect.left,
+              y: e.clientY - rect.top,
+              active: true,
+            });
+          }}
+          onMouseLeave={() => setSpotlight((s) => ({ ...s, active: false }))}
+        >
+          {/* Spotlight hover highlight */}
+          <div
+            className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+            style={{
+              background: spotlight.active
+                ? `radial-gradient(600px circle at ${spotlight.x}px ${spotlight.y}px, rgba(255,255,255,0.18), rgba(255,255,255,0.08), transparent 70%)`
+                : "transparent",
+              opacity: spotlight.active ? 1 : 0,
+            }}
+          />
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-2xl">
               <h3 className="text-3xl font-bold mb-2">Pronto para vender mais com fotos melhores?</h3>
               <p className="text-white">
@@ -87,7 +114,7 @@ const Satisfaction = () => {
               </Button>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-white/80">
+          <div className="relative z-10 flex flex-wrap items-center gap-4 mt-6 text-sm text-white/80">
             <span>500+ negócios atendidos</span>
             <span className="opacity-50">•</span>
             <span>Média de 4,9/5 em satisfação</span>
