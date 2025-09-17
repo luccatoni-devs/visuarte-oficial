@@ -8,8 +8,7 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-3 items-center">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3">
-              <img src="/lovable-uploads/visuarte-logo-transparent.png" alt="Visuarte" className="h-10 w-auto" />
-              <span className="font-semibold text-lg">Visuarte</span>
+              <img src="/lovable-uploads/logo.png" alt="Visuarte" className="h-20 w-auto" />
             </div>
             <p className="text-blue-100 mt-4 max-w-md">
               Imagens que vendem por você. Melhoramos fotos de produtos, cardápios, imóveis e automóveis para aumentar suas conversões.
@@ -31,13 +30,6 @@ const Footer = () => {
                 <div>
                   <p className="text-sm font-medium">Pagamento Protegido</p>
                   <p className="text-xs text-blue-100">Criptografia</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3">
-                <BadgeCheck className="h-5 w-5 text-white" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-medium">Entregas Confiáveis</p>
-                  <p className="text-xs text-blue-100">Satisfação</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3">
