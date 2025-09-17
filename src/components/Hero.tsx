@@ -65,7 +65,12 @@ const Hero = () => {
               variant="futuristic" 
               size="lg" 
               className="min-w-[200px]"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                window.open(
+                  'https://wa.me/5532999940335?text=Olá,%20vi%20o%20site%20da%20Visuarte%20e%20quero%20solicitar%20um%20orçamento.',
+                  '_blank'
+                )
+              }
             >
               <Rocket className="h-5 w-5 mr-2" />
               Solicitar Orçamento
