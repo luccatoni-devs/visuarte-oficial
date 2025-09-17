@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { TrendingUp, Target, Camera, Home, DollarSign, Car, Zap, Gem, Rocket, Play, Sparkles, Image, ChevronLeft, ChevronRight, Clock, CheckCircle, Star } from "lucide-react";
+import { TrendingUp, Target, Camera, Home, DollarSign, Car, Zap, Gem, Rocket, Play, Sparkles, Image, ChevronLeft, ChevronRight, Clock, CheckCircle, Star, MousePointer2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import foodImage from "@/assets/food-before-after-complete.jpg";
 import realEstateImage from "@/assets/real-estate-before-after-new.jpg";
@@ -220,7 +220,8 @@ const Services = () => {
                             ))}
                           </div>
                           
-                          <div className="text-center text-sm text-muted-foreground mt-4">
+                          <div className="text-center text-sm text-muted-foreground mt-4 flex items-center justify-center gap-2">
+                            <MousePointer2 className="h-4 w-4" />
                             Clique para ver mais detalhes
                           </div>
                         </CardContent>
@@ -233,7 +234,7 @@ const Services = () => {
                         <img
                           src={service.image}
                           alt={`${service.title} - Antes e Depois`}
-                          className="w-full max-w-md h-56 object-cover rounded-lg mb-6 shadow-lg"
+                          className="w-full max-w-md h-auto object-contain rounded-lg mb-6 shadow-lg"
                         />
                         <DialogTitle className="text-2xl font-bold text-foreground text-center w-full">
                           {service.title}
