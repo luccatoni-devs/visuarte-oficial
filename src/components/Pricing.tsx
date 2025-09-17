@@ -85,7 +85,7 @@ const Pricing = () => {
               >
                 {/* Frente do card */}
                 <Card
-                  className={`absolute w-full h-full backface-hidden overflow-hidden card-futuristic ${
+                  className={`absolute w-full h-full backface-hidden overflow-hidden card-futuristic flex flex-col ${
                     plan.popular ? "border-2 border-primary scale-105" : ""
                   }`}
                 >
@@ -113,8 +113,8 @@ const Pricing = () => {
                       {plan.description}
                     </p>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <ul className="space-y-3">
+                  <CardContent className="space-y-4 flex-grow flex flex-col justify-between">
+                    <ul className="space-y-3 flex-grow">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-sm">
                           <Check className="h-4 w-4 text-accent font-bold mt-0.5" />
@@ -124,7 +124,7 @@ const Pricing = () => {
                     </ul>
                     <Button
                       variant="success"
-                      className="animate-scale-pulse hover:animate-none"
+                      className="animate-pulse hover:scale-110 transition-all duration-500 ease-in-out w-full"
                       size="lg"
                       onClick={e => {
                         e.stopPropagation();
@@ -137,7 +137,7 @@ const Pricing = () => {
                   </CardContent>
                 </Card>
                 {/* Verso do card */}
-                <Card className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col justify-center items-center p-8 bg-background z-20">
+                <Card className="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col justify-center items-center p-6 bg-background z-20">
                   <CardHeader className="text-center">
                     <CardTitle className="text-2xl font-bold text-primary mb-2">
                       Mais sobre o {plan.name}
@@ -176,7 +176,7 @@ const Pricing = () => {
         .transform-style-preserve-3d {
           transform-style: preserve-3d;
           position: relative;
-          min-height: 480px;
+          min-height: 550px;
         }
         .backface-hidden {
           backface-visibility: hidden;
