@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
 import { Upload, Search, Sparkles, Target, Zap, Shield, CheckCircle, ChevronRight } from "lucide-react";
+import before1 from "@/assets/before_after/before1.jpg";
+import before2 from "@/assets/before_after/before2.jpg";
+import before3 from "@/assets/before_after/before3.jpg";
+import before4 from "@/assets/before_after/before4.jpg";
+import after1 from "@/assets/before_after/after1.jpg";
+import after2 from "@/assets/before_after/after2.jpg";
+import after3 from "@/assets/before_after/after3.jpg";
+import after4 from "@/assets/before_after/after4.jpg";
 
 const Process = () => {
   const steps = [
@@ -38,6 +46,9 @@ const Process = () => {
   }, [activeStep]);
 
   const progressPercent = ((activeStep + 1) / steps.length) * 100;
+
+  const beforeImages = [before1, before2, before3, before4];
+  const afterImages = [after1, after2, after3, after4];
 
   return (
     <section className="py-20 bg-gradient-primary relative overflow-hidden">
@@ -117,8 +128,13 @@ const Process = () => {
               {/* Visual interativo de antes/depois simples para a etapa */}
               <div className="flex-1">
                 <div className="relative rounded-xl overflow-hidden ring-1 ring-white/10">
-                  <div className={`absolute inset-0 transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`} style={{ background: "linear-gradient(135deg, rgba(0,0,0,.35), rgba(0,0,0,.15))" }} />
-                  <div className="aspect-[16/10] bg-[url('/placeholder.svg')] bg-center bg-cover" />
+                  <img
+                    src={showAfter ? afterImages[activeStep] : beforeImages[activeStep]}
+                    alt={showAfter ? "Depois" : "Antes"}
+                    className="aspect-[16/10] w-full h-auto object-cover transition-all duration-500"
+                  />
+                  {/* Overlay opcional para efeito visual */}
+                  <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${showAfter ? "opacity-0" : "opacity-100"}`} style={{ background: "linear-gradient(135deg, rgba(0,0,0,.35), rgba(0,0,0,.15))" }} />
                 </div>
                 <div className="mt-3 flex items-center justify-center gap-3">
                   <button
