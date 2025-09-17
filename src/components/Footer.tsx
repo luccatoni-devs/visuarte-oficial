@@ -7,10 +7,14 @@ const Footer = () => {
         {/* Top: Marca + Selos */}
         <div className="grid gap-8 md:grid-cols-3 items-center">
           <div className="md:col-span-1">
-            <div className="flex flex-col items-center gap-3"> {/* Alterado para flex-col e items-center */}
-              <img src="/lovable-uploads/logo.png" alt="Visuarte" className="h-20 w-auto" />
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src="/lovable-uploads/logo.png"
+                alt="Visuarte"
+                className="h-20 w-auto transition-transform duration-300 hover:scale-110"
+              />
             </div>
-            <p className="text-blue-100 mt-4 max-w-md text-center"> {/* Centraliza o texto também */}
+            <p className="text-blue-100 mt-4 max-w-md text-center">
               Imagens que vendem por você. Melhoramos fotos de produtos, cardápios, imóveis e automóveis para aumentar suas conversões.
             </p>
           </div>
@@ -18,21 +22,21 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="font-semibold mb-4">Selos e Verificações</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3">
+              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
                 <img src="/src/assets/selos/selo-ssl.png" alt="Site Seguro" className="h-8 w-8 object-contain" />
                 <div>
                   <p className="text-sm font-medium">Site Seguro</p>
                   <p className="text-xs text-blue-100">SSL Ativo</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3">
+              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
                 <img src="/src/assets/selos/selo-compra-segura.jpg" alt="Pagamento Protegido" className="h-8 w-8 object-contain" />
                 <div>
                   <p className="text-sm font-medium">Pagamento Protegido</p>
                   <p className="text-xs text-blue-100">Criptografia</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3">
+              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
                 <img src="/src/assets/selos/selo-qualidade.jpg" alt="Qualidade Verificada" className="h-8 w-8 object-contain" />
                 <div>
                   <p className="text-sm font-medium">Qualidade Verificada</p>
