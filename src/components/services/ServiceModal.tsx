@@ -28,7 +28,7 @@ const ServiceModal = ({ service }: ServiceModalProps) => {
         <img
           src={service.image}
           alt={`${service.title} - Antes e Depois`}
-          className="w-full max-w-md h-auto object-contain rounded-lg mb-6 shadow-lg"
+          className="w-full max-w-md mt-[500px] object-contain rounded-lg mb-6 shadow-lg"
         />
         <DialogTitle className="text-2xl font-bold text-foreground text-center w-full">
           {service.title}
@@ -99,12 +99,14 @@ const ServiceModal = ({ service }: ServiceModalProps) => {
         {/* CTA Button */}
         <div className="pt-4 border-t w-full flex justify-center">
           <Button 
+            asChild
             variant="futuristic" 
             className="w-full max-w-xs"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <Rocket className="h-5 w-5 mr-2" />
-            Solicitar Orçamento Personalizado
+            <a href="https://wa.me/5532999940335?text=Olá,%20vi%20o%20site%20da%20Visuarte%20e%20quero%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer">
+              <Rocket className="h-5 w-5 mr-2" />
+              Solicitar Orçamento no WhatsApp
+            </a>
           </Button>
         </div>
       </div>

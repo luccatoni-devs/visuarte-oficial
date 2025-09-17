@@ -221,7 +221,7 @@ const Services = () => {
                             ))}
                           </div>
                           
-                          <div className="text-center text-sm text-muted-foreground mt-4 flex items-center justify-center gap-2">
+                          <div className="text-center text-sm text-muted-foreground mt-4 flex items-center justify-center gap-2 transition-transform duration-300 ease-out hover:scale-110">
                             <MousePointer2 className="h-4 w-4" />
                             Clique para ver mais detalhes
                           </div>

@@ -124,7 +124,7 @@ const Pricing = () => {
                     </ul>
                     <Button
                       variant="success"
-                      className="animate-pulse hover:scale-110 transition-all duration-500 ease-in-out w-full"
+                      className="animate-breathe hover:scale-110 transition-all duration-500 ease-in-out w-full"
                       size="lg"
                       onClick={e => {
                         e.stopPropagation();
