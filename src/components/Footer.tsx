@@ -22,26 +22,20 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="font-semibold mb-4">Selos e Verificações</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
-                <img src="/src/assets/selos/selo-ssl.png" alt="Site Seguro" className="h-8 w-8 object-contain" />
-                <div>
-                  <p className="text-sm font-medium">Site Seguro</p>
-                  <p className="text-xs text-blue-100">SSL Ativo</p>
-                </div>
+              <div className="flex flex-col justify-center items-center rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
+                <img src="/src/assets/selos/selo-ssl.png" alt="Site Seguro" className="h-16 w-16 object-contain mb-2" />
+                <p className="text-sm font-medium text-center">Site Seguro</p>
+                <p className="text-xs text-blue-100 text-center">SSL Ativo</p>
               </div>
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
-                <img src="/src/assets/selos/selo-compra-segura.jpg" alt="Pagamento Protegido" className="h-8 w-8 object-contain" />
-                <div>
-                  <p className="text-sm font-medium">Pagamento Protegido</p>
-                  <p className="text-xs text-blue-100">Criptografia</p>
-                </div>
+              <div className="flex flex-col justify-center items-center rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
+                <img src="/src/assets/selos/selo-compra-segura.png" alt="Pagamento Protegido" className="h-16 w-16 object-contain mb-2" />
+                <p className="text-sm font-medium text-center">Pagamento Protegido</p>
+                <p className="text-xs text-blue-100 text-center">Criptografia</p>
               </div>
-              <div className="flex items-center gap-3 rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
-                <img src="/src/assets/selos/selo-qualidade.jpg" alt="Qualidade Verificada" className="h-8 w-8 object-contain" />
-                <div>
-                  <p className="text-sm font-medium">Qualidade Verificada</p>
-                  <p className="text-xs text-blue-100">Profissional</p>
-                </div>
+              <div className="flex flex-col justify-center items-center rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
+                <img src="/src/assets/selos/selo-qualidade.png" alt="Qualidade Verificada" className="h-16 w-16 object-contain mb-2" />
+                <p className="text-sm font-medium text-center">Qualidade Verificada</p>
+                <p className="text-xs text-blue-100 text-center">Profissional</p>
               </div>
             </div>
           </div>

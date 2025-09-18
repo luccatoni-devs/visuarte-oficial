@@ -22,7 +22,7 @@ const Benefits = () => {
       suffix: '+', 
       label: 'Projetos Entregues', 
       icon: Users,
-      color: 'text-blue-400'
+      color: 'text-green-400'
     },
     { 
       key: 'increase' as keyof typeof counters, 
@@ -38,7 +38,7 @@ const Benefits = () => {
       suffix: 'h', 
       label: 'Prazo Médio de Entrega', 
       icon: Clock,
-      color: 'text-yellow-400'
+      color: 'text-green-400'
     },
     { 
       key: 'satisfaction' as keyof typeof counters, 
@@ -46,7 +46,7 @@ const Benefits = () => {
       suffix: '%', 
       label: 'Clientes Satisfeitos', 
       icon: CheckCircle,
-      color: 'text-emerald-400'
+      color: 'text-green-400'
     }
   ];
 
