@@ -8,9 +8,9 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Essencial",
-      price: "R$ 60,00",
-      priceInstallment: "12x de R$ 6,15",
+      name: "Destaque",
+      price: "R$ 109,90",
+      priceInstallment: "12x de R$ 9,15",
       photos: "3",
       description: "Ideal para testar o impacto das imagens certas",
       features: [
@@ -23,9 +23,9 @@ const Pricing = () => {
       paymentLink: "https://pay.kirvano.com/b871d210-c0ed-4eb0-b1cf-8a69908a57e1"
     },
     {
-      name: "Destaque",
-      price: "R$ 110,00",
-      priceInstallment: "12x de R$ 11,27",
+      name: "Premium",
+      price: "R$ 177,00",
+      priceInstallment: "12x de R$ 14,75",
       photos: "5",
       description: "Melhor custo-benefício: economize R$ 30 em relação ao Essencial",
       features: [
@@ -40,9 +40,9 @@ const Pricing = () => {
       paymentLink: "https://pay.kirvano.com/db7bb35b-e536-4e92-acde-756ebf0fd6ba"
     },
     {
-      name: "Premium",
-      price: "R$ 180,00",
-      priceInstallment: "12x de R$ 18,45",
+      name: "Supreme",
+      price: "R$ 277,00",
+      priceInstallment: "12x de R$ 23,10",
       photos: "10",
       description: "Máximo impacto com desconto progressivo (quase 50% mais fotos pelo dobro do preço do Essencial)",
       features: [

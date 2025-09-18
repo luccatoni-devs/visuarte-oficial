@@ -106,37 +106,37 @@ const Benefits = () => {
     {
       icon: TrendingUp,
       title: "Aumento de até 65% nas vendas",
-      description: "Imagens profissionais convertem mais visitantes em clientes, comprovado por nossos casos",
+      description: "Empresas que utilizam imagens profissionais têm em média 65% mais conversões do que aquelas que usam fotos amadoras. Isso acontece porque o cliente compra primeiro com os olhos. Nossa tecnologia de transformação de imagens potencializa suas vendas ao destacar o melhor do seu produto de forma irresistível.",
       image: aumento
     },
     {
       icon: Zap,
       title: "Entrega em 24-48h",
-      description: "Processo otimizado para você receber suas imagens transformadas rapidamente",
+      description: "Sabemos que agilidade é fundamental para o seu negócio. Por isso, garantimos a entrega das imagens transformadas em até 48 horas. Assim, você não perde tempo e já pode começar a atrair mais clientes e aumentar seus resultados quase de imediato.",
       image: entrega
     },
     {
       icon: DollarSign,
       title: "ROI garantido",
-      description: "Investimento que se paga: mais vendas, maior percepção de valor, clientes satisfeitos",
+      description: "Investir em imagens profissionais não é gasto, é retorno. Estudos de mercado mostram que empresas que investem em visual de qualidade conseguem até 3x mais engajamento e aumentam significativamente o ROI. Com nossas imagens, cada real investido volta para você em forma de vendas.",
       image: roigarantido
     },
     {
       icon: Target,
       title: "Especialização por segmento",
-      description: "Conhecemos as particularidades de cada mercado: food, imóveis, automóveis",
+      description: "Não existe fórmula pronta. Cada segmento tem suas próprias necessidades visuais. Seja você dono de restaurante, vendedor de carro ou dono de imóvel, nós adaptamos a transformação de imagens para o perfil exato do seu público, garantindo o máximo impacto.",
       image: especializacao
     },
     {
       icon: Shield,
-      title: "100% seguro e confidencial",
-      description: "Suas imagens são tratadas com total confidencialidade e segurança",
+      title: "100% seguro e confidencial + Garantia de 7 dias",
+      description: "A sua confiança é a nossa prioridade. Por isso, oferecemos 7 dias de garantia total: se você não ficar satisfeito com o resultado, devolvemos 100% do valor investido sem burocracia. Além disso, todo o processo é seguro e confidencial, preservando sua privacidade.",
       image: seguranca
     },
     {
       icon: Award,
       title: "Qualidade premium",
-      description: "Padrão profissional de mercado, com técnicas avançadas de enhancement",
+      description: "Nossas imagens são tratadas com tecnologia de ponta, garantindo um resultado premium que se destaca da concorrência. Clientes relatam que após transformar suas imagens conosco, tiveram mais cliques, mais pedidos e maior fidelização dos clientes.",
       image: garantia
     }
   ];
