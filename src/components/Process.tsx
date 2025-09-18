@@ -166,19 +166,22 @@ const Process = () => {
                   <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-white mt-1" /> Tempo estimado e o que esperar do próximo passo.</li>
                 </ul>
                 <div className="mt-6 flex items-center gap-3">
-                  <button
-                    onClick={() => setActiveStep((s) => Math.max(0, s - 1))}
-                    disabled={activeStep === 0}
-                    className="px-4 py-2 rounded-lg bg-white/10 text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
-                  >
-                    Voltar
-                  </button>
-                  <button
-                    onClick={() => setActiveStep((s) => Math.min(steps.length - 1, s + 1))}
-                    className="px-4 py-2 rounded-lg bg-white text-black hover:bg-white/90 transition-colors inline-flex items-center gap-2"
-                  >
-                    Próximo passo <ChevronRight className="h-4 w-4" />
-                  </button>
+                  {activeStep > 0 && (
+                    <button
+                      onClick={() => setActiveStep((s) => Math.max(0, s - 1))}
+                      className="px-4 py-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-colors"
+                    >
+                      Voltar
+                    </button>
+                  )}
+                  {activeStep < steps.length - 1 && (
+                    <button
+                      onClick={() => setActiveStep((s) => Math.min(steps.length - 1, s + 1))}
+                      className="px-4 py-2 rounded-lg bg-white text-black hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+                    >
+                      Próximo passo <ChevronRight className="h-4 w-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
