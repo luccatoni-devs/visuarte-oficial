@@ -28,7 +28,7 @@ const ServiceModal = ({ service }: ServiceModalProps) => {
         <img
           src={service.image}
           alt={`${service.title} - Antes e Depois`}
-          className="w-full max-w-md mt-[500px] object-contain rounded-lg mb-6 shadow-lg"
+          className="w-full max-w-md mt-[500px] md:mt-[500px] mt-[400px] object-contain rounded-lg mb-6 shadow-lg"
         />
         <DialogTitle className="text-2xl font-bold text-foreground text-center w-full">
           {service.title}
