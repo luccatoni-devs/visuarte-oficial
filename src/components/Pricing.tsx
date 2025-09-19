@@ -9,52 +9,58 @@ const Pricing = () => {
   const plans = [
     {
       name: "Destaque",
-      price: "R$ 109,90",
-      priceInstallment: "12x de R$ 9,15",
+      price: "R$ 99,90",
+      priceInstallment: "12x de R$ 10,23",
       photos: "3",
-      description: "Ideal para testar o impacto das imagens certas",
+      description: "Ideal para quem quer testar e já ver impacto rápido.",
       features: [
         "3 fotos editadas profissionalmente",
         "Entrega em 24-48h",
-        "Suporte por email",
-        "Revisão incluída"
+        "Suporte por Whatsapp",
+        "1 Revisão incluída",
+        "Ajuste de cores e luz para maior nitidez",
+        "Fotos otimizadas para redes sociais e anúncios"
       ],
       popular: false,
-      paymentLink: "https://pay.kirvano.com/b871d210-c0ed-4eb0-b1cf-8a69908a57e1"
+      paymentLink: "https://pay.kirvano.com/48246797-026e-42cf-94b0-07db7542cdf7"
     },
     {
       name: "Premium",
-      price: "R$ 177,00",
-      priceInstallment: "12x de R$ 14,75",
+      price: "R$ 147,00",
+      priceInstallment: "12x de R$ 15,06",
       photos: "5",
-      description: "Melhor custo-benefício: economize R$ 30 em relação ao Essencial",
+      description: "Melhor custo-benefício: mais fotos, prioridade e revisões extras.",
       features: [
         "5 fotos editadas profissionalmente",
         "Entrega em 24-48h",
         "Suporte prioritário",
-        "2 revisões incluídas",
-        "Orientações de uso"
+        "3 revisões incluídas",
+        "Orientações práticas de uso das imagens",
+        "Ajustes avançados de contraste, brilho e foco",
+        "Fotos otimizadas para gerar maior conversão em anúncios"
       ],
       popular: true,
       badge: "Mais vendido",
-      paymentLink: "https://pay.kirvano.com/db7bb35b-e536-4e92-acde-756ebf0fd6ba"
+      paymentLink: "https://pay.kirvano.com/41737fd6-7f6c-41b1-8731-c6f77b0b6dcf"
     },
     {
       name: "Supreme",
-      price: "R$ 277,00",
-      priceInstallment: "12x de R$ 23,10",
+      price: "R$ 197,00",
+      priceInstallment: "12x de R$ 20,19",
       photos: "10",
-      description: "Máximo impacto com desconto progressivo (quase 50% mais fotos pelo dobro do preço do Essencial)",
+      description: "Máximo impacto e resultado com fotos + vídeos.",
       features: [
         "10 fotos editadas profissionalmente",
-        "Entrega em 24-48h",
-        "Suporte VIP",
+        "Entrega em 12-24h",
+        "Inclui 5 fotos tratadas + 3 VisuMotion (fotos convertidas em vídeos)",
+        "Suporte VIP com atendimento personalizado",
         "Revisões ilimitadas",
-        "Consultoria de marketing visual",
-        "Backup das imagens por 1 ano"
+        "Consultoria de marketing visual para aplicar as imagens",
+        "Backup das imagens por 1 ano",
+        "Fotos e vídeos preparados sob medida para anúncios e redes sociais "
       ],
       popular: false,
-      paymentLink: "https://pay.kirvano.com/ba874e29-6d60-40da-8071-9ab0a567ed12"
+      paymentLink: "https://pay.kirvano.com/0da0faa3-2eb4-4ed2-8740-0d4921bdd85f"
     }
   ];
 
@@ -176,7 +182,7 @@ const Pricing = () => {
         .transform-style-preserve-3d {
           transform-style: preserve-3d;
           position: relative;
-          min-height: 550px;
+          min-height: 700px;
         }
         .backface-hidden {
           backface-visibility: hidden;
