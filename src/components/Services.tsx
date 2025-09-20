@@ -107,7 +107,7 @@ const Services = () => {
       benefits: [
         { icon: Play, text: "Movimento dinâmico" },
         { icon: Sparkles, text: "Efeito cinematográfico" },
-        { icon: Image, text: "Engagement 3x maior" }
+        { icon: Image, text: "Engajamento 3x maior" }
       ],
       category: "livephoto",
       detailedInfo: {
