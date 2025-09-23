@@ -6,6 +6,7 @@ import ProcessStep from "./ProcessStep";
 interface Service {
   title: string;
   image: string;
+  isGif?: boolean;
   category: string;
   detailedInfo: {
     fullDescription: string;
@@ -25,11 +26,19 @@ const ServiceModal = ({ service }: ServiceModalProps) => {
     <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto flex flex-col items-center justify-center">
       <DialogHeader className="w-full flex flex-col items-center">
         {/* Service Image */}
-        <img
-          src={service.image}
-          alt={`${service.title} - Antes e Depois`}
-          className="w-full max-w-md mt-[500px] md:mt-[500px] mt-[400px] object-contain rounded-lg mb-6 shadow-lg"
-        />
+        {service.isGif ? (
+          <img
+            src={service.image}
+            alt={`${service.title} - Demonstração em movimento`}
+            className="w-full max-w-md mt-[500px] md:mt-[500px] mt-[400px] object-contain rounded-lg mb-6 shadow-lg"
+          />
+        ) : (
+          <img
+            src={service.image}
+            alt={`${service.title} - Antes e Depois`}
+            className="w-full max-w-md mt-[500px] md:mt-[500px] mt-[400px] object-contain rounded-lg mb-6 shadow-lg"
+          />
+        )}
         <DialogTitle className="text-2xl font-bold text-foreground text-center w-full">
           {service.title}
         </DialogTitle>

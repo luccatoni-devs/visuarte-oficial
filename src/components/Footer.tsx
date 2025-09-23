@@ -48,24 +48,23 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3">Contato</h4>
               <ul className="space-y-2 text-sm text-blue-100">
-                <li className="flex items-center justify-center align-middle"><Mail className="h-4 w-4 mr-2" /> visuarte.empresa@gmail.com</li>
-                <li className="flex items-center justify-center align-middle"><Smartphone className="h-4 w-4 mr-2" /> (32) 99994-0335</li>
+                <li className="flex items-center justify-center align-middle transition-transform duration-300 hover:scale-110"><Mail className="h-4 w-4 mr-2 transition-transform duration-300 hover:scale-110" /> visuarte.empresa@gmail.com</li>
+                <li className="flex items-center justify-center align-middle transition-transform duration-300 hover:scale-110"><Smartphone className="h-4 w-4 mr-2 transition-transform duration-300 hover:scale-110" /> (32) 99994-0335</li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-3">Redes Sociais</h4>
               <div className="flex items-center justify-center gap-3 text-blue-100">
-                <a href="#" aria-label="Instagram" className="hover:text-white transition-colors"><Instagram className="h-5 w-5" /></a>
-                <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
+                <a href="https://www.instagram.com/visuarte.oficiall?igsh=aGtlMTRkd20yOWo4" aria-label="Instagram" className="hover:text-white transition-colors transition-transform duration-300 hover:scale-110"><Instagram className="h-5 w-5" /></a>
+                <a href="https://www.facebook.com/profile.php?id=61581279741289" aria-label="Facebook" className="hover:text-white transition-colors transition-transform duration-300 hover:scale-110"><Facebook className="h-5 w-5" /></a>
               </div>
             </div>
 
             <div>
               <h4 className="font-semibold mb-3">Atendimento</h4>
               <ul className="space-y-2 text-sm text-blue-100">
-                <li className="flex items-center justify-center align-middle">Seg a Sex: 8h às 18h</li>
-                <li className="flex items-center justify-center align-middle">Sábado: 8h às 12h</li>
+                <li className="flex items-center justify-center align-middle transition-transform duration-300 hover:scale-110">24h por dia!</li>
               </ul>
             </div>
           </div>

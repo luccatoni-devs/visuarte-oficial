@@ -4,9 +4,11 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { TrendingUp, Target, Camera, Home, DollarSign, Car, Zap, Gem, Play, Sparkles, Image, ChevronLeft, ChevronRight, MousePointer2 } from "lucide-react";
 import { useState, useEffect } from "react";
-import foodImage from "@/assets/food-before-after-complete.jpg";
-import realEstateImage from "@/assets/real-estate-before-after-new.jpg";
-import automotiveImage from "@/assets/automotive-before-after-complete.jpg";
+import foodImage from "@/assets/1.jpg";
+import realEstateImage from "@/assets/5.jpg";
+import automotiveImage from "@/assets/6.jpg";
+import petshopImage from "@/assets/14.png";
+import livePhotoGif from "@/assets/14.2.gif";
 import ServiceModal from "./services/ServiceModal";
 
 const Services = () => {
@@ -20,6 +22,7 @@ const Services = () => {
       title: "Restaurantes & iFood",
       description: "Transformamos suas fotos de pratos em imagens irresistíveis que aumentam pedidos e conversões no delivery.",
       image: foodImage,
+      isGif: false,
       benefits: [
         { icon: TrendingUp, text: "65% mais pedidos" },
         { icon: Target, text: "Destaque no app" },
@@ -48,6 +51,7 @@ const Services = () => {
       title: "Imóveis",
       description: "Valorizamos seus imóveis com fotos que destacam o potencial e aceleram vendas e locações.",
       image: realEstateImage,
+      isGif: false,
       benefits: [
         { icon: Home, text: "Venda mais rápida" },
         { icon: DollarSign, text: "Maior valor percebido" },
@@ -76,6 +80,7 @@ const Services = () => {
       title: "Automóveis",
       description: "Suas fotos de veículos ganham qualidade showroom, atraindo mais compradores interessados.",
       image: automotiveImage,
+      isGif: false,
       benefits: [
         { icon: Car, text: "Aparência premium" },
         { icon: Zap, text: "Venda acelerada" },
@@ -103,7 +108,8 @@ const Services = () => {
     {
       title: "Live Photo",
       description: "Transformamos suas fotos estáticas em imagens dinâmicas e interativas que capturam a atenção.",
-      image: foodImage,
+      image: livePhotoGif,
+      isGif: true,
       benefits: [
         { icon: Play, text: "Movimento dinâmico" },
         { icon: Sparkles, text: "Efeito cinematográfico" },
