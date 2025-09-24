@@ -1,4 +1,7 @@
 import { Mail, Smartphone, Instagram, Facebook, Linkedin, ShieldCheck, BadgeCheck, Lock } from "lucide-react";
+import seloSSL from "../assets/selos/selo-ssl.png";
+import seloCompraSegura from "../assets/selos/selo-compra-segura.png";
+import seloQualidade from "../assets/selos/selo-qualidade.png";
 
 const Footer = () => {
   return (
@@ -23,17 +26,17 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Selos e Verificações</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               <div className="flex flex-col justify-center items-center rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
-                <img src="/src/assets/selos/selo-ssl.png" alt="Site Seguro" className="h-16 w-16 object-contain mb-2" />
+                <img src={seloSSL} alt="Site Seguro" className="h-16 w-16 object-contain mb-2" />
                 <p className="text-sm font-medium text-center">Site Seguro</p>
                 <p className="text-xs text-blue-100 text-center">SSL Ativo</p>
               </div>
               <div className="flex flex-col justify-center items-center rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
-                <img src="/src/assets/selos/selo-compra-segura.png" alt="Pagamento Protegido" className="h-16 w-16 object-contain mb-2" />
+                <img src={seloCompraSegura} alt="Pagamento Protegido" className="h-16 w-16 object-contain mb-2" />
                 <p className="text-sm font-medium text-center">Pagamento Protegido</p>
                 <p className="text-xs text-blue-100 text-center">Criptografia</p>
               </div>
               <div className="flex flex-col justify-center items-center rounded-md bg-blue-700/40 px-4 py-3 transition-transform duration-300 hover:scale-110">
-                <img src="/src/assets/selos/selo-qualidade.png" alt="Qualidade Verificada" className="h-16 w-16 object-contain mb-2" />
+                <img src={seloQualidade} alt="Qualidade Verificada" className="h-16 w-16 object-contain mb-2" />
                 <p className="text-sm font-medium text-center">Qualidade Verificada</p>
                 <p className="text-xs text-blue-100 text-center">Profissional</p>
               </div>

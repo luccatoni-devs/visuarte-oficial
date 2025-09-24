@@ -37,10 +37,9 @@ const Services = () => {
           "Edição e otimização das imagens",
           "Entrega em formatos otimizados"
         ],
-        pricing: "A partir de R$ 299",
-        deliveryTime: "3-5 dias úteis",
+        pricing: "A partir de R$ 99,90",
+        deliveryTime: "12-48 horas",
         includes: [
-          "10 fotos editadas",
           "Formatos para iFood e Uber Eats",
           "Consultoria de apresentação",
           "Revisões ilimitadas"
@@ -66,10 +65,9 @@ const Services = () => {
           "Captura e edição profissional",
           "Entrega otimizada para portais"
         ],
-        pricing: "A partir de R$ 399",
-        deliveryTime: "2-4 dias úteis",
+        pricing: "A partir de R$ 99,90",
+        deliveryTime: "12-48 horas",
         includes: [
-          "15 fotos editadas",
           "Tour virtual 360°",
           "Otimização para portais",
           "Certificado de qualidade"
@@ -95,10 +93,10 @@ const Services = () => {
           "Retoque de imperfeições",
           "Criação de variações"
         ],
-        pricing: "A partir de R$ 199",
-        deliveryTime: "24-48 horas",
+        pricing: "A partir de R$ 99,90",
+        deliveryTime: "12-48 horas",
         includes: [
-          "8 ângulos diferentes",
+          "Ângulos diferentes",
           "Remoção de riscos menores",
           "Fundo personalizado",
           "Otimização para OLX/Webmotors"
@@ -124,8 +122,8 @@ const Services = () => {
           "Aplicação de efeitos visuais",
           "Renderização em alta qualidade"
         ],
-        pricing: "A partir de R$ 99",
-        deliveryTime: "1-2 dias úteis",
+        pricing: "A partir de R$ 197,00",
+        deliveryTime: "12-24 horas",
         includes: [
           "Efeito de paralaxe",
           "Movimento suave",

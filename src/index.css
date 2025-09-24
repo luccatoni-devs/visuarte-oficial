@@ -179,7 +179,7 @@
     background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: text-shimmer 3.5s linear infinite;
+    animation: text-shimmer 3.5s ease-in-out infinite alternate;
     text-shadow: 0 0 10px rgba(255,255,255,0.15), 0 0 30px rgba(255,255,255,0.08);
     -webkit-text-fill-color: transparent; /* Prevent clipping artifacts on WebKit */
   }
@@ -194,12 +194,11 @@
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
     transform: skewX(-20deg);
     filter: blur(2px);
-    animation: shine-sweep 2.8s ease-in-out infinite;
+    animation: shine-sweep 2.8s ease-in-out infinite alternate;
   }
 
   @keyframes shine-sweep {
     0% { left: -30%; }
-    60% { left: 130%; }
     100% { left: 130%; }
   }
 
