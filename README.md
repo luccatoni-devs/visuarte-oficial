@@ -1,6 +1,6 @@
-# Visuarte — Site institucional e landing page
+# Visuarte — Landing Page
 
-Aplicação web em React para apresentação de serviços de edição e melhoria visual (before/after), com seções de hero, benefícios, processo, pricing, FAQ e contato, utilizando componentes acessíveis e estilização com Tailwind. O projeto é focado em performance, responsividade e facilidade de manutenção.
+Aplicação web em React para apresentação de serviços de edição e melhoria visual, com seções de hero, benefícios, processo, pricing, FAQ e contato, utilizando componentes acessíveis e estilização com Tailwind. O projeto é focado em performance, responsividade e facilidade de manutenção.
 
 ## Tecnologias principais
 
@@ -20,11 +20,11 @@ Pastas principais (trecho simplificado):
 ```text
 src/
   components/           # Componentes de UI e seções da página
-    services/           # Componentes ligados aos serviços (Before/After, modal, etc.)
+    services/           # Componentes ligados aos serviços
     ui/                 # Primitivos (shadcn/ui)
   pages/                # Rotas (Index, NotFound)
   hooks/                # Hooks personalizados
-  assets/               # Imagens e mídias (inclui before/after)
+  assets/               # Imagens e mídias
   lib/                  # Utilitários
 ```
 
@@ -111,7 +111,7 @@ npm run build
 
 ## Licença
 
-Este projeto é de uso interno da Visuarte. Caso precise de licença aberta, ajuste esta seção conforme necessário.
+Este projeto é de uso interno da Visuarte.
 
 ## Contato
 
