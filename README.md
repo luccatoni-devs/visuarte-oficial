@@ -1,73 +1,119 @@
-# Welcome to your Lovable project
+# Visuarte — Site institucional e landing page
 
-## Project info
+Aplicação web em React para apresentação de serviços de edição e melhoria visual (before/after), com seções de hero, benefícios, processo, pricing, FAQ e contato, utilizando componentes acessíveis e estilização com Tailwind. O projeto é focado em performance, responsividade e facilidade de manutenção.
 
-**URL**: https://lovable.dev/projects/8f92d50d-038d-41e7-b589-46f48a693840
+## Tecnologias principais
 
-## How can I edit this code?
+- **Vite** (build/dev server)
+- **React 18** + **TypeScript**
+- **React Router** (navegação)
+- **Tailwind CSS** + **tailwind-merge** + **tailwindcss-animate**
+- **shadcn/ui** (sobre Radix) e **Radix UI** (acessibilidade)
+- **Lucide React** (ícones)
+- **Zod** e **React Hook Form** (validação e formulários)
+- **@tanstack/react-query** (estado de dados remoto, se necessário)
 
-There are several ways of editing your application.
+## Estrutura do projeto
 
-**Use Lovable**
+Pastas principais (trecho simplificado):
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f92d50d-038d-41e7-b589-46f48a693840) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+src/
+  components/           # Componentes de UI e seções da página
+    services/           # Componentes ligados aos serviços (Before/After, modal, etc.)
+    ui/                 # Primitivos (shadcn/ui)
+  pages/                # Rotas (Index, NotFound)
+  hooks/                # Hooks personalizados
+  assets/               # Imagens e mídias (inclui before/after)
+  lib/                  # Utilitários
 ```
 
-**Edit a file directly in GitHub**
+Componentes de destaque:
+- `components/Hero.tsx`, `Benefits.tsx`, `Process.tsx`, `Pricing.tsx`, `FAQ.tsx`, `Footer.tsx`, `Satisfaction.tsx`, `Services.tsx`
+- `components/services/BeforeAfterViewer.tsx`, `ServiceModal.tsx`, `ProcessStep.tsx`
+- Primitivos UI em `components/ui/*` (accordion, dialog, button, input etc.)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Pré-requisitos
 
-**Use GitHub Codespaces**
+- Node.js LTS (18+ recomendado)
+- npm (ou bun/pnpm, se preferir)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Verifique a versão:
 
-## What technologies are used for this project?
+```bash
+node -v
+npm -v
+```
 
-This project is built with:
+## Como rodar localmente
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Clone o repositório:
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   cd visuarte-oficial
+   ```
+2. Instale as dependências:
+   ```bash
+   npm i
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+4. Acesse a aplicação no navegador (geralmente `http://localhost:5173`).
 
-## How can I deploy this project?
+## Scripts disponíveis
 
-Simply open [Lovable](https://lovable.dev/projects/8f92d50d-038d-41e7-b589-46f48a693840) and click on Share -> Publish.
+- `npm run dev`: inicia o servidor de desenvolvimento Vite
+- `npm run build`: gera build de produção em `dist/`
+- `npm run build:dev`: build com modo desenvolvimento habilitado
+- `npm run preview`: serve o build produzido para conferência
+- `npm run lint`: roda o ESLint
 
-## Can I connect a custom domain to my Lovable project?
+## Build e preview
 
-Yes, you can!
+```bash
+npm run build
+npm run preview
+```
+O preview sobe um servidor estático local servindo o conteúdo de `dist/`.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Estilo e UI
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Tailwind configurado em `tailwind.config.ts` e `postcss.config.js`.
+- Primitivos do shadcn/ui em `src/components/ui/*` utilizando Radix UI.
+- Ícones via `lucide-react`.
+
+## Navegação
+
+- Rotas definidas com `react-router-dom` em `src/pages/*` e integração em `src/main.tsx`.
+
+## Convenções e boas práticas
+
+- Componentes e funções com nomes explícitos e tipos do TypeScript.
+- Evite comentários extensos; mantenha funções curtas e coesas.
+- Prefira componentes puros e estados locais bem delimitados.
+
+## Estrutura de imagens
+
+- Imagens e exemplos before/after estão em `src/assets/` e subpastas.
+- Para adicionar novas imagens, salve em `src/assets/` e importe no componente correspondente.
+
+## Deploy
+
+Como é um projeto Vite estático, você pode publicar o conteúdo de `dist/` em qualquer hosting estático (Netlify, Vercel, GitHub Pages, Cloudflare Pages, etc.).
+
+Passos gerais:
+```bash
+npm run build
+# publique a pasta dist/ na sua plataforma
+```
+
+## Licença
+
+Este projeto é de uso interno da Visuarte. Caso precise de licença aberta, ajuste esta seção conforme necessário.
+
+## Contato
+
+- Site/Marca: Visuarte
+- Responsável: Lucca Toni
