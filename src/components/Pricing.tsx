@@ -52,7 +52,7 @@ const Pricing = () => {
       features: [
         "10 fotos editadas profissionalmente",
         "Entrega em 12-24h",
-        "Inclui 5 fotos tratadas + 3 VisuMotion (fotos convertidas em vídeos)",
+        "Inclui 7 fotos tratadas + 3 VisuMotion (fotos convertidas em vídeos)",
         "Suporte VIP com atendimento personalizado",
         "Revisões ilimitadas",
         "Consultoria de marketing visual para aplicar as imagens",
@@ -123,7 +123,7 @@ const Pricing = () => {
                     <ul className="space-y-3 flex-grow">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-sm">
-                          <Check className="h-4 w-4 text-accent font-bold mt-0.5" />
+                          <Check className="h-5 w-5 text-accent mt-0.5 flex-none" />
                           <span className="text-muted-foreground">{feature}</span>
                         </li>
                       ))}
