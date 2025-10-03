@@ -163,7 +163,7 @@ const OfertaEspecial = () => {
           <div className="text-center space-y-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl">
               A Maneira Mais Rápida de{" "}
-              <span className="text-accent drop-shadow-glow">
+              <span className="text-accent drop-shadow-glow" style={{textShadow: '0 0 30px hsl(var(--accent)), 0 0 60px hsl(var(--accent)/0.5), 0 0 90px hsl(var(--accent)/0.3)'}}>
                 Aumentar Suas Vendas em 300%
               </span>{" "}
               Sem Precisar Ser Fotógrafo Profissional
