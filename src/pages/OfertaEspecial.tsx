@@ -91,17 +91,20 @@ const OfertaEspecial = () => {
     {
       name: "Maria Silva",
       text: "Minhas vendas aumentaram 300% após usar as fotos da Visuarte. A qualidade é impressionante!",
-      rating: 5
+      rating: 5,
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria"
     },
     {
       name: "João Santos",
       text: "Profissionalismo incrível. As fotos transformaram completamente meu negócio de imóveis.",
-      rating: 5
+      rating: 5,
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Joao"
     },
     {
       name: "Ana Costa",
       text: "Atendimento rápido e resultado impecável. Super recomendo!",
-      rating: 5
+      rating: 5,
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ana"
     }
   ];
 
@@ -152,20 +155,21 @@ const OfertaEspecial = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Seção 1: Título e Vídeo */}
-      <section className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_50%)]" />
+      <section className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-primary/60">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,hsl(var(--accent)/0.3),transparent_50%),radial-gradient(circle_at_70%_70%,hsl(var(--secondary)/0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--primary)/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary)/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         
         <div className="container mx-auto max-w-5xl relative z-10">
           <div className="text-center space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl">
               A Maneira Mais Rápida de{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-accent drop-shadow-glow">
                 Aumentar Suas Vendas em 300%
               </span>{" "}
               Sem Precisar Ser Fotógrafo Profissional
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-lg">
               Transforme suas fotos comuns em imagens profissionais que vendem. 
               Especial para empreendedores que querem resultados rápidos.
             </p>
@@ -276,9 +280,16 @@ const OfertaEspecial = () => {
                         <p className="text-muted-foreground mb-4 flex-grow italic">
                           "{testimonial.text}"
                         </p>
-                        <p className="font-semibold text-foreground">
-                          {testimonial.name}
-                        </p>
+                        <div className="flex items-center gap-3">
+                          <img 
+                            src={testimonial.avatar} 
+                            alt={testimonial.name}
+                            className="w-12 h-12 rounded-full border-2 border-primary/20"
+                          />
+                          <p className="font-semibold text-foreground">
+                            {testimonial.name}
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
                   </CarouselItem>
@@ -287,6 +298,46 @@ const OfertaEspecial = () => {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Métricas */}
+      <section className="py-16 bg-gradient-to-r from-primary/5 via-accent/5 to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="text-center">
+              <Card className="card-futuristic border-primary/20 bg-gradient-to-br from-primary/10 to-primary/5">
+                <CardContent className="p-6">
+                  <div className="text-5xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-sm text-muted-foreground font-medium">Clientes Satisfeitos</div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="text-center">
+              <Card className="card-futuristic border-accent/20 bg-gradient-to-br from-accent/10 to-accent/5">
+                <CardContent className="p-6">
+                  <div className="text-5xl font-bold text-accent mb-2">98%</div>
+                  <div className="text-sm text-muted-foreground font-medium">Taxa de Satisfação</div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="text-center">
+              <Card className="card-futuristic border-primary/20 bg-gradient-to-br from-primary/10 to-primary/5">
+                <CardContent className="p-6">
+                  <div className="text-5xl font-bold text-primary mb-2">24h</div>
+                  <div className="text-sm text-muted-foreground font-medium">Entrega Expressa</div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="text-center">
+              <Card className="card-futuristic border-accent/20 bg-gradient-to-br from-accent/10 to-accent/5">
+                <CardContent className="p-6">
+                  <div className="text-5xl font-bold text-accent mb-2">+300%</div>
+                  <div className="text-sm text-muted-foreground font-medium">Aumento em Vendas</div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
